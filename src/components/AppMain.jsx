@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Children } from 'react';
+import React, { useState, useEffect} from 'react';
 import AddCanvas from "./AddCanvas";
 import AppCard from "./AppCard";
 import PostList from './PostList'
