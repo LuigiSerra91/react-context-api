@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import GlobalContext from "../GlobalContec/GlobalContexts";
 export default function PostCard() {
     const navigate = useNavigate()
     const [task, setTask] = useState(null)
-
+    const { api_url} = useContext(GlobalContext)
     const { id } = useParams()
-    const url = `http://localhost:3002/post/${id}`
+    const url = `${api_url}/post/${id}`
 
     useEffect(
         () => {
@@ -38,7 +38,7 @@ export default function PostCard() {
                     <div className="card-group p-3">
                         <div className="card p-2">
                             <div className="img">
-                                <img className="card-img-top" src={`http://localhost:3002/${task.img}`} alt="img-anime" />
+                                <img className="card-img-top" src={`${api_url}/${task.img}`} alt="img-anime" />
                             </div>
 
                             <div className="card-body">

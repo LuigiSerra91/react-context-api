@@ -1,7 +1,8 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useContext} from 'react';
 import AddCanvas from "../components/AddCanvas";
 import AppCard from "../components/AppCard";
 import PostList from '../components/PostList'
+import GlobalContext from '../GlobalContec/GlobalContexts';
 const initialFormdata = {
   title: '',
   author: '',
@@ -12,12 +13,13 @@ const initialFormdata = {
 }
 
 
+
 export default function PostPage() {
 
   const [task, setTask] = useState([])
   const [formData, setFormData] = useState(initialFormdata)
-
-  function fetchData(url = "http://localhost:3002/post") {
+ const { api_url} = useContext(GlobalContext)
+  function fetchData(url = `${api_url}/post`) {
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -35,7 +37,7 @@ export default function PostPage() {
     console.log(e.target.getAttribute('data-id'));
 
     const id = e.target.getAttribute('data-id')
-    fetch('http://localhost:3002/post/' + id, {
+    fetch(`${api_url}/post/${id}`, {
       method: 'DELETE',
       headers: {
         'content-Type': 'application/json'
@@ -70,7 +72,7 @@ export default function PostPage() {
     };
 
 
-    fetch('http://localhost:3002/post', {
+    fetch(`${api_url}/post`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newPost)
