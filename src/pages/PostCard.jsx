@@ -5,7 +5,7 @@ import GlobalContext from "../GlobalContec/GlobalContexts";
 export default function PostCard() {
     const navigate = useNavigate()
     const [task, setTask] = useState(null)
-    const { api_url} = useContext(GlobalContext)
+    const { api_url } = useContext(GlobalContext)
     const { id } = useParams()
     const url = `${api_url}/post/${id}`
 
@@ -26,7 +26,19 @@ export default function PostCard() {
 
                 })
         },
-        [])
+        [id])
+
+    const goToPrevious = () => {
+        const previousId = parseInt(id) - 1;
+        navigate(`/postlist/${previousId}`);
+    };
+
+    // Funzione per navigare al post successivo
+    const goToNext = () => {
+        const nextId = parseInt(id) + 1;
+        navigate(`/postlist/${nextId}`);
+    };
+
 
     return (
 
@@ -51,6 +63,11 @@ export default function PostCard() {
                             <Link to={"/postlist"}>
                                 <button className="btn bg-primary">Back PostList</button>
                             </Link>
+
+                            <div className="mt-3">
+                                <button onClick={goToPrevious} className="btn btn-secondary me-2">Previous</button>
+                                <button onClick={goToNext} className="btn btn-secondary">Next</button>
+                            </div>
 
                         </div>
                     </div>

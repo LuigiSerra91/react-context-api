@@ -20,7 +20,7 @@ function App() {
               <Route path='/' element={<Home />} />
               <Route path='/chisiamo' element={<ChiSiamo />} />
               <Route path='/postlist' element={<PostPage />} />
-              <Route path='/postlist/:id/' element={<PostCard />} />
+              <Route path='/postlist/:id' element={<PostCard />} />
             </Route>
 
 
