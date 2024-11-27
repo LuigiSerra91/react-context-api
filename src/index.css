@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+
+.card {
+
+    background-color: bisque;
+
+    p {
+        font-family: fantasy;
+        color: tomato;
+    }
+
+    display: flex;
+
+    align-items: center;
+
+    height: 100%;
+
+    box-shadow: 10px 10px 10px yellow;
+
+
+}
+
+main {
+    background-color: black;
+    padding-bottom: 2rem;
+   
+}
+
+header {
+    margin-bottom: -8px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    a{
+        color: white;
+      padding: 1rem;
+      text-decoration: none;
+    }
+    align-items: center;
+
+}
+
+footer{
+    color: white;
+    
+}
+
+.vh{
+    min-height: calc(100vh - 72px);
+    background-color: lightsalmon;
+    
+}
+
+.home{
+    text-shadow: 5px 5px 5px rgb(150, 149, 149);
+}
+
+.chi-siamo{
+    text-shadow: 5px 5px 5px rgb(150, 149, 149);
+}
+
+.card-group{
+    img{
+        width: 100%
+    }
+    max-width: 500px;
+
+   
+}
+
+
