@@ -28,16 +28,24 @@ export default function PostCard() {
         },
         [id])
 
-    const goToPrevious = () => {
+  /*   const goToPrevious = () => {
         const previousId = parseInt(id) - 1;
         navigate(`/postlist/${previousId}`);
+        if (previousId > 0) {
+            setId(previousId);
+            navigate(`/postlist/${previousId}`);
+        }
     };
 
     // Funzione per navigare al post successivo
     const goToNext = () => {
         const nextId = parseInt(id) + 1;
         navigate(`/postlist/${nextId}`);
-    };
+        if (nextId <= totalPosts) {
+            setId(nextId);
+            navigate(`/postlist/${nextId}`);
+        }
+    }; */
 
 
     return (
@@ -64,10 +72,10 @@ export default function PostCard() {
                                 <button className="btn bg-primary">Back PostList</button>
                             </Link>
 
-                            <div className="mt-3">
+                            {/* <div className="mt-3">
                                 <button onClick={goToPrevious} className="btn btn-secondary me-2">Previous</button>
                                 <button onClick={goToNext} className="btn btn-secondary">Next</button>
-                            </div>
+                            </div> */}
 
                         </div>
                     </div>
